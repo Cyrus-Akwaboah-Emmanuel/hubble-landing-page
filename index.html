@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+  <link rel="stylesheet" href="style.css">
+  <title>Frontend Mentor | Huddle landing page with single introductory section</title>
+</head>
+<body>
+
+  <main>
+    <section class="container">
+      <img src="images/bg-mobile.svg" srcset="images/bg-desktop.svg 2x" alt="bg-mobile svg" class="bg-svg">
+
+      <!-- logo & mockup -->
+      <div class="logo-mockup">
+        <div class="logo-darkmode">
+          <img src="images/logo.svg" alt="hubble logo" class="logo">
+          <ion-icon name="contrast-outline" id="contrast"></ion-icon>
+        </div>
+        <img src="images/illustration-mockups.svg" alt="mockup svg" class="mockup-svg">
+      </div>
+
+      <div class="info">
+        <h1>Build the community <br id="break">your fans will love</h1>
+
+        <p>Hubble re-imagines the way we build communities. You have a voice but so does your audience. Create connections with your users as you engage in genuine discussion.</p>
+
+        <button>Resgister</button>
+
+        <div class="medialinks">
+          <a href="#f" id="facebook">
+            <ion-icon name="logo-facebook"></ion-icon>
+          </a>
+          <a href="#f" id="twitter">
+            <ion-icon name="logo-twitter"></ion-icon>
+          </a>
+          <a href="#f" id="instagram">
+            <ion-icon name="logo-instagram"></ion-icon>
+          </a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <p class="attribution">
+      Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>.
+      Coded by <a href="https://www.frontendmentor.io/profile/Cyrus-Akwaboah-Emmanuel">Emmanuel Akwaboah</a>.
+    </p>
+  </footer>
+
+  <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+  <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+
+  <script>
+    var body = document.body;
+    var iconbtn = document.querySelector("#contrast");
+    var currentTheme = localStorage.getItem("currentTheme")
+
+    if(currentTheme){
+      body.classList.add("change-Theme");
+    }
+
+    iconbtn.addEventListener("click", () =>{
+      body.classList.toggle("change-Theme");
+
+      if(body.classList.contains("change-Theme")){
+        localStorage.setItem("currentTheme", "active")
+      } else {
+        localStorage.removeItem("currentTheme", "active")
+      }
+    })
+  </script>
+</body>
+</html>
